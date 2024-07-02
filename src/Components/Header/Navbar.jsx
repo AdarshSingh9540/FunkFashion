@@ -91,10 +91,10 @@ const Navbar = () => {
           ) : (
             <RiMenu2Line size={22} onClick={toggleMobileMenu} />
           )}
-          <div className="logoContainer">
-            <Link to="/">
-              <img src={logo} alt="Logo" />
-            </Link>
+          <div className="logoContainer" style={{fontWeight:"600", fontSize:"24px"}}>
+          
+              FunkFashion
+           
           </div>
           <Link to="/cart">
             <Badge
