@@ -1,12 +1,22 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginSignUp.css";
-import { Link } from "react-router-dom";
 
 const LoginSignUp = () => {
   const [activeTab, setActiveTab] = useState("tabButton1");
+  const navigate = useNavigate();
 
   const handleTab = (tab) => {
     setActiveTab(tab);
+  };
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    navigate("/");
+  };
+
+  const handleRegister = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -28,11 +38,10 @@ const LoginSignUp = () => {
             </p>
           </div>
           <div className="loginSignUpTabsContent">
-            {/* tab1 */}
-
+            {/* Tab 1 */}
             {activeTab === "tabButton1" && (
               <div className="loginSignUpTabsContentLogin">
-                <form>
+                <form onSubmit={handleLogin}>
                   <input type="email" placeholder="Email address *" required />
                   <input type="password" placeholder="Password *" required />
                   <div className="loginSignUpForgetPass">
@@ -44,7 +53,7 @@ const LoginSignUp = () => {
                       <Link to="/resetPassword">Lost password?</Link>
                     </p>
                   </div>
-                  <button>Log In</button>
+                  <button type="submit">Log In</button>
                 </form>
                 <div className="loginSignUpTabsContentLoginText">
                   <p>
@@ -57,11 +66,10 @@ const LoginSignUp = () => {
               </div>
             )}
 
-            {/* Tab2 */}
-
+            {/* Tab 2 */}
             {activeTab === "tabButton2" && (
               <div className="loginSignUpTabsContentRegister">
-                <form>
+                <form onSubmit={handleRegister}>
                   <input type="text" placeholder="Username *" required />
                   <input type="email" placeholder="Email address *" required />
                   <input type="password" placeholder="Password *" required />
@@ -78,7 +86,7 @@ const LoginSignUp = () => {
                     </Link>
                     .
                   </p>
-                  <button>Register</button>
+                  <button type="submit">Register</button>
                 </form>
               </div>
             )}

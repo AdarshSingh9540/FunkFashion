@@ -13,8 +13,6 @@ import { RiShoppingBagLine } from "react-icons/ri";
 import { MdOutlineClose } from "react-icons/md";
 import { FiHeart } from "react-icons/fi";
 
-// social Links imports Icons
-
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -36,7 +34,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Menu */}
-      <nav className="navBar">
+      <nav className="navBar ">
         <div className="logoLinkContainer">
           <div className="logoContainer" style={{fontSize:"24px", fontWeight:"600"}}>
             FunkFashion
@@ -79,7 +77,6 @@ const Navbar = () => {
             </Badge>
           </Link>
           <FiHeart size={22} />
-          <RiMenu2Line size={22} />
         </div>
       </nav>
 
@@ -177,7 +174,7 @@ const Navbar = () => {
                 </select>
               </div>
             </div>
-            <div className="mobile-menuSocial_links">
+            <div className="mobile-menuSocial_links ">
               <FaFacebookF />
               <FaXTwitter />
               <FaInstagram />
